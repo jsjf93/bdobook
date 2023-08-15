@@ -1,0 +1,73 @@
+﻿@page
+@using BDOBook.App.Extensions;
+@model IndexModel
+@{
+    ViewData["Title"] = "Home | BDOBook";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <h2 class="display-6">Blog posts</h2>
+
+                @if (Model.Posts.Count() == 0)
+                {
+                    <p>No results</p>
+                }
+                <ul class="list-group">
+                    @foreach (var post in Model.Posts)
+                    {
+                        <li class="list-group-item">
+                            <div>
+                                <a href="/profile/@post.AuthorId">
+                                    <h3 class="display-6">@post.Author.FullName</h3>
+                                </a>
+                                <p>@post.DateTimePosted.ToPrettyString()</p>
+                            </div>
+                            <p>@post.Content</p>
+                        </li>
+                    }
+                </ul>
+
+                <nav aria-label="Search blog posts">
+                    <ul class="pagination">
+                        @for (int pageNumber = 1; pageNumber <= Math.Ceiling((double)Model.Count / 10); pageNumber++)
+                        {
+                            <li class="page-item @(pageNumber == Model.CurrentPage ? "active" :"")">
+                                <a class="page-link" asp-route-pageNumber="@pageNumber">
+                                    @pageNumber
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-12 col-lg-4">
+                <h2 class="display-6">Headlines</h2>
+
+                @if (Model.News == null)
+{
+					<p>No results</p>
+				}
+                <ul class="list-group">
+                    @if (Model.News != null)
+					{
+                        @foreach (var newsItem in Model.News)
+                        {
+                            <li class="list-group-item">
+                                <a href="@newsItem.Url" target="_blank">
+                                    <h3>@newsItem.Title</h3>
+                                    <p>@newsItem.Description</p>
+                                </a>
+                            </li>
+                        }
+					}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

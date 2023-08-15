@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5</TargetFramework>
+    <UserSecretsId>9bf449d7-d1fb-459a-8100-5be1197d11ee</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FileContextCore" Version="3.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BDOBook.Data\BDOBook.Data.csproj" />
+    <ProjectReference Include="..\BDOBook.Services\BDOBook.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\css\" />
+  </ItemGroup>
+
+  <Target Name="NPMInstall" AfterTargets="PostBuildEvent">
+    <Exec Command="npm install" />
+  </Target>
+
+  <Target Name="Gulp" AfterTargets="NPMInstall">
+    <Exec Command="npm run gulp" />
+  </Target>
+
+</Project>
