@@ -5,6 +5,7 @@
     <UserSecretsId>9bf449d7-d1fb-459a-8100-5be1197d11ee</UserSecretsId>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'BDOBook.App' " />
   <ItemGroup>
     <PackageReference Include="FileContextCore" Version="3.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.17">

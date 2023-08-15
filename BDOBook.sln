@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BDOBook.App", "BDOBook.App\BDOBook.App.csproj", "{92C0BAC8-5352-4352-A58B-37D5DA460F2E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOBook.App", "BDOBook.App\BDOBook.App.csproj", "{92C0BAC8-5352-4352-A58B-37D5DA460F2E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BDOBook.Data", "BDOBook.Data\BDOBook.Data.csproj", "{2BAE492C-08D1-41AF-9814-EFBABDBF87AE}"
 EndProject
@@ -15,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOBook.Services", "BDOBook.Services\BDOBook.Services.csproj", "{4EA0955F-7A2E-456B-A085-FF79C70BE1D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOBook.Tests", "BDOBook.Tests\BDOBook.Tests.csproj", "{E4DA3FB1-785F-4C3B-9D09-477FA2D48BAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOBook.Application", "BDOBook.Application\BDOBook.Application.csproj", "{FE9B94FC-7B01-4782-84BD-15A07893460B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{E4DA3FB1-785F-4C3B-9D09-477FA2D48BAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4DA3FB1-785F-4C3B-9D09-477FA2D48BAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4DA3FB1-785F-4C3B-9D09-477FA2D48BAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE9B94FC-7B01-4782-84BD-15A07893460B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE9B94FC-7B01-4782-84BD-15A07893460B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE9B94FC-7B01-4782-84BD-15A07893460B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE9B94FC-7B01-4782-84BD-15A07893460B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
