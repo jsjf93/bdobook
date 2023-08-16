@@ -20,8 +20,12 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\scss\pages\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\scss\pages\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Update="Properties\launchSettings.json">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
