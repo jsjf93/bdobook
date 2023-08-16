@@ -1,0 +1,18 @@
+Notes:
+- Haven't used too much of Razor in the past so apologies if I've made eye-burning mistakes
+- Functionality-wise, all tasks are completed
+- NewsApi seems to be limited to 3 posts at a time, so I couldn't use 5
+
+Additional features and work:
+- Vaguely responsive, making use of Bootstrap's columns
+- For accessibility, aria-labels were provided and using the Wave browser extension checked for issues such as low colour contrast and ensured semantic HTML was used to help people with screen readers
+- BDOBook.App was renamed to BDOBook.Application as my Macbook threw its toys out of the pram thinking the project folder was an application
+- It has been ages since I last used SCSS but I used a BEM-ish approach
+- Having had it on my mind recently after going through a pen test for Uppr, added middleware for security headers.
+  Using ngrok I tested the application on https://securityheaders.com/ and got A+ (after some fumbling)
+
+Further improvements:
+- Additional tests could be added, e.g. to Index.cshtml.cs and Profile.cshtml.cs
+- Further research into Razor would be needed to allow parts of the page to load independently;
+  e.g. show a loading state while retrieving headlines to allow the page to be rendered a little faster (similar to React's Suspense feature)
+- Expand the architecture to separate out the frontend from the backend logic e.g. WebUI, Application, Domain, Infrastructure, I didn't do that here as it's a small project

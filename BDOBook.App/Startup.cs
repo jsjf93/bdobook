@@ -1,3 +1,6 @@
+using System;
+using System.Net.Http;
+using BDOBook.Application.Middleware;
 using BDOBook.Data;
 using BDOBook.Services;
 using BDOBook.Services.Interfaces;
@@ -7,13 +10,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Net.Http;
 
 namespace BDOBook
 {
-	public class Startup
+    public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -37,11 +37,15 @@ namespace BDOBook
                 });
 
             services.AddSingleton<INewsService>(ctx => new NewsService(apiToken, ctx.GetRequiredService<IHttpClientFactory>()));
+
+            services.AddSingleton<SecurityHeadersMiddleware>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseMiddleware<SecurityHeadersMiddleware>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

@@ -21,6 +21,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\scss\pages\" />
+    <Folder Include="Middleware\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +33,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Middleware\" />
   </ItemGroup>
   <Target Name="NPMInstall" AfterTargets="PostBuildEvent">
     <Exec Command="npm install" />

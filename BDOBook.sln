@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA509EA0-8C70-40B0-9EE8-6504E1AC7D03}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		notes+excuses.txt = notes+excuses.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BDOBook.Services", "BDOBook.Services\BDOBook.Services.csproj", "{4EA0955F-7A2E-456B-A085-FF79C70BE1D1}"
