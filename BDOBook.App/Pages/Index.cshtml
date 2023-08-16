@@ -5,13 +5,13 @@
     ViewData["Title"] = "Home | BDOBook";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<div class="home">
+    <h1 class="display-4 text-center">Welcome</h1>
 
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8">
-                <h2 class="display-6">Blog posts</h2>
+                <h2 class="display-6 home__subtitle">Blog posts</h2>
 
                 @if (Model.Posts.Count() == 0)
                 {
@@ -27,13 +27,13 @@
                                 </a>
                                 <p>@post.DateTimePosted.ToPrettyString()</p>
                             </div>
-                            <p>@post.Content</p>
+                            <p class="mb-0">@post.Content</p>
                         </li>
                     }
                 </ul>
 
                 <nav aria-label="Search blog posts">
-                    <ul class="pagination">
+                    <ul class="pagination home__pagination">
                         @for (int pageNumber = 1; pageNumber <= Math.Ceiling((double)Model.Count / 10); pageNumber++)
                         {
                             <li class="page-item @(pageNumber == Model.CurrentPage ? "active" :"")">
@@ -46,8 +46,8 @@
                 </nav>
             </div>
 
-            <div class="col-12 col-lg-4">
-                <h2 class="display-6">Headlines</h2>
+            <div class="col-12 col-lg-4 home__headlines">
+                <h2 class="display-6 home__subtitle">Headlines</h2>
 
                 @if (Model.News == null)
                 {
@@ -60,8 +60,11 @@
                         {
                             <li class="list-group-item">
                                 <a href="@newsItem.Url" target="_blank">
-                                    <h3>@newsItem.Title</h3>
-                                    <p>@newsItem.Description</p>
+                                    <div class="home__headline-item">
+                                        <h3>@newsItem.Title</h3>
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                    </div>
+                                    <p class="mb-0">@newsItem.Description</p>
                                 </a>
                             </li>
                         }

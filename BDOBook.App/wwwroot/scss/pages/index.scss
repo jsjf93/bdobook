@@ -1,0 +1,25 @@
+﻿.home {
+    &__subtitle {
+        margin-left: 1.25rem;
+    }
+
+    &__pagination {
+        margin: 1rem 0 0 1rem;
+    }
+
+    &__headlines {
+        a {
+            color: black;
+        }
+    }
+
+    &__headline-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        > h3 {
+            font-size: 1.5rem;
+        }
+    }
+}

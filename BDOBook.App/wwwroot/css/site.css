@@ -68,11 +68,32 @@ body {
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px;
-  /* Vertically center the text there */
+  line-height: 60px; /* Vertically center the text there */
 }
 
 /* Form styles */
 .field-validation-error {
   color: red;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.home__subtitle {
+  margin-left: 1.25rem;
+}
+.home__pagination {
+  margin: 1rem 0 0 1rem;
+}
+.home__headlines a {
+  color: black;
+}
+.home__headline-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.home__headline-item > h3 {
+  font-size: 1.5rem;
 }
