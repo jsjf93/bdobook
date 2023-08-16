@@ -84,7 +84,11 @@ body {
   margin-left: 1.25rem;
 }
 .home__pagination {
-  margin: 1rem 0 0 1rem;
+  margin: 1rem;
+}
+.home__pagination .page-link {
+  font-weight: bold;
+  font-size: 1.25rem;
 }
 .home__headlines a {
   color: black;

@@ -1,15 +1,13 @@
-﻿using BDOBook.App.DTOs;
-using BDOBook.Data;
-using BDOBook.Data.Entities;
-using BDOBook.Services.Interfaces;
-using BDOBook.Services.Responses;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BDOBook.App.DTOs;
+using BDOBook.App.Extensions;
+using BDOBook.Application.DTOs;
+using BDOBook.Data;
+using BDOBook.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace BDOBook.Pages
 {
@@ -26,7 +24,7 @@ namespace BDOBook.Pages
             _newsService = newsService;
         }
 
-        public IQueryable<Post> Posts { get; private set; }
+        public IEnumerable<PostDto> Posts { get; private set; }
 
         public int Count { get; private set; }
 
@@ -52,7 +50,15 @@ namespace BDOBook.Pages
 
             this.Posts = baseQuery
                 .Skip((this.CurrentPage - 1) * PageSize)
-                .Take(PageSize);
+                .Take(PageSize)
+                .Select(post => new PostDto
+                {
+                    AuthorId = post.AuthorId,
+                    AuthorName = post.Author.FullName,
+                    DateTimePosted = post.DateTimePosted.ToPrettyString(),
+                    Content = post.Content,
+                });
+
             this.Count = baseQuery.Count();
         }
 

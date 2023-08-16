@@ -1,5 +1,4 @@
 ﻿@page
-@using BDOBook.App.Extensions;
 @model IndexModel
 @{
     ViewData["Title"] = "Home | BDOBook";
@@ -22,10 +21,10 @@
                     {
                         <li class="list-group-item">
                             <div>
-                                <a href="/profile/@post.AuthorId">
-                                    <h3 class="display-6">@post.Author.FullName</h3>
+                                <a href="/profile/@post.AuthorId" aria-label="Go to profile - @post.AuthorName">
+                                    <h3 class="display-6">@post.AuthorName</h3>
                                 </a>
-                                <p>@post.DateTimePosted.ToPrettyString()</p>
+                                <p aria-label="Date the post was created">@post.DateTimePosted</p>
                             </div>
                             <p class="mb-0">@post.Content</p>
                         </li>

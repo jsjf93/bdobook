@@ -4,7 +4,12 @@
     }
 
     &__pagination {
-        margin: 1rem 0 0 1rem;
+        margin: 1rem;
+
+        .page-link {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
     }
 
     &__headlines {
