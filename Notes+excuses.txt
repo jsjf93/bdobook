@@ -16,3 +16,6 @@ Further improvements:
 - Further research into Razor would be needed to allow parts of the page to load independently;
   e.g. show a loading state while retrieving headlines to allow the page to be rendered a little faster (similar to React's Suspense feature)
 - Expand the architecture to separate out the frontend from the backend logic e.g. WebUI, Application, Domain, Infrastructure, I didn't do that here as it's a small project
+- More work on accessibility e.g:
+    - links in navbar for home page are adjacent
+    - Skip to main to assist keyboard users
