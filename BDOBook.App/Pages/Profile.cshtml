@@ -2,30 +2,30 @@
 @using BDOBook.App.Extensions;
 @model BDOBook.App.Pages.ProfileModel
 @{
-	ViewData["Title"] = "Profile | BDOBook";
+    ViewData["Title"] = "Profile | BDOBook";
 }
 
 <div class="text-center">
-	<h1 class="display-4">@Model.Author.FullName</h1>
+    <h1 class="display-4">@Model.Author.FullName</h1>
 
-	<p>@Model.Author.JobTitle</p>
+    <p>@Model.Author.JobTitle</p>
 
-	@if (Model.Posts.Count() == 0)
-	{
-		<p>No results</p>
-	}
-	else
-	{
-		<ul class="list-group">
-			 @foreach (var post in Model.Posts)
-				{
-					<li class="list-group-item">
-						<div>
-							<p>@post.Content</p>
-							<small>@post.DateTimePosted.ToPrettyString()</small>
-						</div>
-					</li>
-				}
-		</ul>
-	}
+    @if (Model.Posts.Count() == 0)
+    {
+        <p>No results</p>
+    }
+    else
+    {
+        <ul class="list-group">
+            @foreach (var post in Model.Posts)
+            {
+                <li class="list-group-item">
+                    <div>
+                        <p>@post.Content</p>
+                        <small>@post.DateTimePosted.ToPrettyString()</small>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
 </div>

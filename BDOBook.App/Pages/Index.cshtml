@@ -50,12 +50,12 @@
                 <h2 class="display-6">Headlines</h2>
 
                 @if (Model.News == null)
-{
-					<p>No results</p>
-				}
+                {
+                    <p>No results</p>
+                }
                 <ul class="list-group">
                     @if (Model.News != null)
-					{
+                    {
                         @foreach (var newsItem in Model.News)
                         {
                             <li class="list-group-item">
@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                         }
-					}
+                    }
                 </ul>
             </div>
         </div>
